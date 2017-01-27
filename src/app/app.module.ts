@@ -2,8 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+import { masterFirebaseConfig } from './api-keys';
 
 import { AppComponent } from './app.component';
+
+const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+}
+
+const firebaseAuthConfig =  {
+  provider: AuthProviders.Github,
+  method: AuthMethods.Popup
+}
+
 
 @NgModule({
   declarations: [
@@ -12,7 +27,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
