@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { masterFirebaseConfig } from './api-keys';
+import { Routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 
@@ -28,6 +29,7 @@ const firebaseAuthConfig =  {
     BrowserModule,
     FormsModule,
     HttpModule,
+    Routing,
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [],
