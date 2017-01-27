@@ -1,3 +1,45 @@
 <div class="container">
-
+  <div class="row headline">
+    <h1 class="text-center">ADD A NEW RECORD</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="new-record-form">
+        <div class="form-group">
+          <input [(ngModel)]="artist" class="form-control" placeholder="Artist">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="title" class="form-control" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="label" class="form-control" placeholder="Label">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="speed" class="form-control" placeholder="Speed">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="coverImg" class="form-control" placeholder="Cover Image (MAKE SURE IT'S SQUARE)">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="description" class="form-control" placeholder="Additional Notes">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 album-display">
+      <h1>PREVIEW:</h1>
+      <div class="col-sm-6">
+        <img src={{coverImg}} class="img-responsive album-cover" alt="albumcover" />
+      </div>
+      <div class="col-sm-6">
+        <h1>{{ artist | uppercase}}</h1>
+        <h3>{{ title | uppercase }}</h3>
+        <h5>{{ label | uppercase }}</h5>
+        <h5>{{ speed | uppercase }} RPM</h5>
+        <p>{{ description | uppercase }}</p>
+        <button (click)="addNewRecord(artist, title, label, speed, coverImg, description)" class="btn">ADD NEW RECORD!</button>
+      </div>
+    </div>
+  </div>
 </div>

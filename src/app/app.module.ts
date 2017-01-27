@@ -11,6 +11,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RecordListComponent } from './record-list/record-list.component';
 import { HomeComponent } from './home/home.component';
 import { AddRecordComponent } from './add-record/add-record.component';
+import { MembersComponent } from './members/members.component';
+import { MemberListComponent } from './member-list/member-list.component';
+import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { RecordsComponent } from './records/records.component';
+import { GetnamePipe } from './getname.pipe';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +36,12 @@ const firebaseAuthConfig =  {
     NavBarComponent,
     RecordListComponent,
     HomeComponent,
-    AddRecordComponent
+    AddRecordComponent,
+    MembersComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    RecordsComponent,
+    GetnamePipe
   ],
   imports: [
     BrowserModule,

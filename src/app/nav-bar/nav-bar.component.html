@@ -5,7 +5,8 @@
     </div>
     <div class="col-sm-10 nav-list">
       <ul>
-        <li><a>View All Records</a></li>
+        <li><a routerLink="members">Members</a></li>
+        <li><a routerLink="records">All Records</a></li>
         <li><a routerLink="new">Add A Record</a></li>
         <input id="searchInput" #searchInput *ngIf="showSearch" placeholder="Search" autofocus>
         <li><a (click)="expandAndShow()">Search</a></li>

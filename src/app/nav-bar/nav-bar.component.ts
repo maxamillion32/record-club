@@ -34,18 +34,19 @@ export class NavBarComponent implements OnInit {
   }
 
   login() {
+      let that = this;
       this.as.login().then(function() {
-        this.router.redirect(['']);
+        that.router.navigate(['new']);
       });
   }
 
   logout() {
+    let that = this;
     this.as.logout().then(function() {
-      this.router.redirect(['']);
+      that.router.navigate(['']);
     })
   }
 
   ngOnInit() {
-
   }
 }

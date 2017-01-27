@@ -7,17 +7,25 @@
     }
   }
   ul {
+    position: relative;
+    top: 15px;
     display: inline-block;
     float: right;
     li {
       display: inline-block;
-      margin: 25px 0 25px 25px;
+      margin: 25px 0 25px 40px;
+      a {
+        font-weight: bold;
+      }
     }
   }
 }
 
 .logo {
   padding: 0;
+  a {
+    border-bottom: 2px solid black;
+  }
 }
 
 .nav-list {
