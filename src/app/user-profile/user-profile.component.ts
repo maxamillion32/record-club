@@ -5,14 +5,14 @@ import { AngularFire } from 'angularfire2';
 import { Record } from '../record.model';
 
 @Component({
-  selector: 'app-add-record',
-  templateUrl: './add-record.component.html',
-  styleUrls: ['./add-record.component.scss'],
+  selector: 'user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.scss'],
   providers: [AuthService, RecordService]
 })
-export class AddRecordComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
   user: any = {};
-  userKey: string;
+  fbUser: any;
   constructor(private af: AngularFire, private as: AuthService, private rs: RecordService) {
     this.af.auth.subscribe(user => {
       if(user) {
@@ -23,14 +23,18 @@ export class AddRecordComponent implements OnInit {
     });
   }
 
-  addNewRecord(artist: string, title: string, label: string, speed: string, coverImg: string, description: string, uid: string) {
-    var newRecord = new Record(artist, title, label, speed, this.user.uid, coverImg, description);
-    this.rs.addRecord(newRecord);
-  }
+  displayName:string;
+
 
 
   ngOnInit() {
-    this.as.userExist(this.user);
+    this.fbUser = this.as.userExist(this.user);
+    this.fbUser.subscribe(user => {
+        user.forEach(user => {
+          this.displayName = this.user.displayName;
+        });
+      });
+    console.log(this.displayName)
   }
 
 }

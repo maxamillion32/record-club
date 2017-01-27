@@ -36,7 +36,7 @@ export class NavBarComponent implements OnInit {
   login() {
       let that = this;
       this.as.login().then(function() {
-        that.router.navigate(['new']);
+        that.router.navigate(['profile']);
       });
   }
 

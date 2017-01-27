@@ -14,7 +14,6 @@ export class RecordsComponent implements OnInit {
 
   ngOnInit() {
   this.records = this.rs.getAllRecords();
-  console.log(this.records)
   }
 
 }

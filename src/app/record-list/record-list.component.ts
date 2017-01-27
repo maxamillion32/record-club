@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,13 +9,15 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./record-list.component.scss'],
   providers: [AuthService]
 })
+
 export class RecordListComponent implements OnInit {
   @Input() records: FirebaseListObservable<any[]>;
-  constructor(private as: AuthService) { }
+  constructor(private router: Router,
+              private as: AuthService) { }
 
-  ownerName(uid: string) {
-    return this.as.getOwnerName(uid);
-  }
+
+
+
 
   ngOnInit() {
   }

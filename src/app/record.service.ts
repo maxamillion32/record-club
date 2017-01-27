@@ -17,7 +17,6 @@ export class RecordService {
 
 
   addRecord(record: Record) {
-    console.log(record);
     this.records.push(record);
   }
 

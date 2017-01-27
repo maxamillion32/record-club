@@ -25,6 +25,13 @@
   padding: 0;
   a {
     border-bottom: 2px solid black;
+    &:hover {
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+      color: black;
+    }
   }
 }
 

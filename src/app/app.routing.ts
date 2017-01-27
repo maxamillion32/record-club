@@ -6,6 +6,8 @@ import { AddRecordComponent } from './add-record/add-record.component';
 import { MembersComponent } from './members/members.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { RecordsComponent } from './records/records.component';
+import { AboutComponent } from './about/about.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 const appRoutes: Routes = [{
@@ -23,6 +25,12 @@ const appRoutes: Routes = [{
 }, {
   path: 'records',
   component: RecordsComponent
+}, {
+  path: 'about',
+  component: AboutComponent
+}, {
+  path: 'profile',
+  component: UserProfileComponent
 }
 
 ];
