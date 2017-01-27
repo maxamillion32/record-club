@@ -7,6 +7,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { Routing } from './app.routing';
 
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RecordListComponent } from './record-list/record-list.component';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -23,7 +25,9 @@ const firebaseAuthConfig =  {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    RecordListComponent
   ],
   imports: [
     BrowserModule,
