@@ -9,6 +9,8 @@ import { Routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RecordListComponent } from './record-list/record-list.component';
+import { HomeComponent } from './home/home.component';
+import { AddRecordComponent } from './add-record/add-record.component';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +29,9 @@ const firebaseAuthConfig =  {
   declarations: [
     AppComponent,
     NavBarComponent,
-    RecordListComponent
+    RecordListComponent,
+    HomeComponent,
+    AddRecordComponent
   ],
   imports: [
     BrowserModule,

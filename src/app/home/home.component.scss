@@ -1,0 +1,49 @@
+.shout {
+  padding: 0;
+  background-color: black;
+  transition: .3s;
+  &:hover {
+    cursor: pointer;
+    animation-name: shake;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0px 0px 1px 1px;
+    h5 {
+      font-size: 3.025rem;
+      transition: .25s;
+    }
+  }
+
+  h1 {
+    margin-top: 0;
+    padding: 50px;
+    text-align: justify;
+    font-size: 5rem;
+    color: white;
+
+  }
+  h5 {
+    color: white;
+    padding: 25px 0 25px 50px;
+    font-size: 3rem;
+    display: inline-block;
+    border-bottom: 2px solid white;
+    margin-bottom: 0;
+  }
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+
+@keyframes shake {
+  0% { opacity: 1; }
+  10% { opacity: .99 }
+  25% { opacity: .98 }
+  50% { opacity: .97; }
+  75% { opacity: .98 }
+  90% { opacity: .99 }
+  100% { opacity: 1 }
+}

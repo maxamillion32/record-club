@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-record-list',
+  selector: 'record-list',
   templateUrl: './record-list.component.html',
-  styleUrls: ['./record-list.component.css']
+  styleUrls: ['./record-list.component.scss']
 })
 export class RecordListComponent implements OnInit {
 

@@ -1,0 +1,42 @@
+.nav-bar-container {
+  a {
+    color: black;
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+  ul {
+    display: inline-block;
+    float: right;
+    li {
+      display: inline-block;
+      margin: 25px 0 25px 25px;
+    }
+  }
+}
+
+.logo {
+  padding: 0;
+}
+
+.nav-list {
+  padding: 0;
+}
+
+input {
+  padding-right: 15px;
+  background-image: url('../../assets/images/search.png');
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-left: 15px;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: none;
+  display: inline-block;
+  transition: 5s;
+  &::-webkit-input-placeholder {
+    color: black;
+  }
+}
