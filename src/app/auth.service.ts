@@ -43,19 +43,23 @@ export class AuthService {
     return tuser;
   }
 
+  saveProfile(newName: string, newPhoto: string, newDescription: string, key: string) {
+    var userToUpdate = this.getUser(key);
+    userToUpdate.update({
+      displayName: newName,
+      photoURL: newPhoto,
+      description: newDescription
+    });
+  }
+
 
 
   getAllUsers() {
     return this.users;
   }
 
-  getUser(uid: string) {
-    var user: any = this.af.database.list('/users', {
-      query: {
-        equalTo: uid
-      }
-    });
-    return user;
+  getUser(key: string) {
+    return this.af.database.object('/users/' + key);
   }
 
 

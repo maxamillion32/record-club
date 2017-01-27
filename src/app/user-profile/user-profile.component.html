@@ -3,9 +3,8 @@
     <div class="col-sm-4">
       <div class="edit-profile-form">
         <div class="form-group">
-          <input class="form-control" [(ngModel)]="displayName" placeholder={{displayName}}>
+          <input class="form-control" [(ngModel)]="displayName">
         </div>
-        <h1>{{displayName}}</h1>
         <div class="form-group">
           <input class="form-control" [(ngModel)]="photoURL">
         </div>
@@ -13,6 +12,14 @@
           <input class="form-control" [(ngModel)]="description">
         </div>
       </div>
+    </div>
+    <div class="col-sm-8">
+      <img src={{photoURL}} alt="profile Photo" class="img-responsive profile-photo">
+      <h1>{{displayName}}</h1>
+      <p>
+        {{description}}
+      </p>
+      <button (click)="saveProfile()">SAVE PROFILE</button>
     </div>
   </div>
 </div>
