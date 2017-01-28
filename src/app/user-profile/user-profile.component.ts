@@ -12,29 +12,46 @@ import { Record } from '../record.model';
 })
 export class UserProfileComponent implements OnInit {
   user: any;
+  fbUsers: any;
   fbUser: any;
+  liveprofile: boolean;
+  showEdit: boolean = false;
 
   constructor(private af: AngularFire, private as: AuthService, private rs: RecordService) {
     this.af.auth.subscribe(user => {
       if(user) {
         this.user = user;
         this.as.addUser(this.user);
-        console.log(this.as.getUserbyUID(this.user.uid));
       } else {
         this.user = null;
       }
     });
+    this.as.getAllUsers().subscribe(users => {
+      users.forEach(user => {
+        if( this.user.uid === user.uid) {
+          this.fbUser = user;
+          this.liveprofile = user.liveProfile;
+        }
+      });
+    });
   }
 
-  saveProfile() {
-
+  updateUser(user: any) {
+    this.as.updateUser(user);
   }
 
+  showEditComp() {
+    this.showEdit = true;
+  }
+
+  hideEditComp() {
+    this.showEdit = false;
+  }
 
 
 
 
   ngOnInit() {
-  }
 
+  }
 }

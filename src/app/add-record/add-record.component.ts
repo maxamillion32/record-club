@@ -30,7 +30,6 @@ export class AddRecordComponent implements OnInit {
 
 
   ngOnInit() {
-    this.as.userExist(this.user);
   }
 
 }

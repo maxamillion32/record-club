@@ -35,12 +35,30 @@ export class AuthService {
   }
 
   saveProfile(newName: string, newPhoto: string, newDescription: string, key: string) {
-    var userToUpdate = this.getUserbyUID(key);
+    console.log(newName, newPhoto, newDescription, key)
+    var userToUpdate = this.getUser(key);
+    userToUpdate.update({
+      displayName: newName,
+      photoURL: newPhoto,
+      description: newDescription,
+      liveProfile: true
+    });
+    // var userToUpdate = this.getUserbyUID(key);
       // userToUpdate.subscribe(user => {
       //   console.log(user);
       // });
   }
 
+  updateUser(user: any) {
+      console.log(user);
+      // usertwoupdate.update({
+      //   // displayName: usertwoupdate.displayName,
+      //   // uid: usertwoupdate.uid,
+      //   // photoURL: usertwoupdate.photoURL,
+      //   // description: usertwoupdate.description,
+      //   // profileLive: true
+      // });
+  }
 
 
   getAllUsers() {
@@ -50,11 +68,13 @@ export class AuthService {
   getUser(key: string) {
     return this.af.database.object('/users/' + key);
   }
-  public crazy: User;
-  getUserbyUID(uid: any) {
+  public crazy: FirebaseListObservable<any[]>;
+  getUserbyUID(uid: string): any {
+    var theone: FirebaseListObservable<any[]>;
     var allem = this.getAllUsers();
     allem.subscribe(users => {
-      console.log(users);
+      this.crazy = users;
+      return this.crazy;
     });
   }
 

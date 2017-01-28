@@ -3,6 +3,25 @@
     <h1>PROFILE</h1>
   </div>
 </div>
-<div *ngIf="user" class="container">
-  <app-edit-profile [user]="user" [fbUser]="fbUser"></app-edit-profile>
+<div class="container">
+  <div class="row hide-and-show-row">
+    <button (click)="showEditComp()">SHOW</button>
+    <button (click)="hideEditComp()">HIDE</button>
+  </div>
+</div>
+<div class="container profile-container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src={{fbUser?.photoURL}} class="img-responsive" alt="">
+    </div>
+    <div class="col-sm-8">
+
+    </div>
+  </div>
+</div>
+<div *ngIf="liveprofile===false || showEdit" class="container">
+  <app-edit-profile
+    [user]="user"
+    >
+  </app-edit-profile>
 </div>
