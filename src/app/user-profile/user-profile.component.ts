@@ -11,24 +11,23 @@ import { Record } from '../record.model';
   providers: [AuthService, RecordService]
 })
 export class UserProfileComponent implements OnInit {
-  user: any = {};
+  user: any;
   fbUser: any;
-  displayName: string;
-  photoURL: string;
-  description: string;
-  key: string;
+
   constructor(private af: AngularFire, private as: AuthService, private rs: RecordService) {
     this.af.auth.subscribe(user => {
       if(user) {
         this.user = user;
+        this.as.addUser(this.user);
+        this.fbUser = this.as.getUserbyUID(this.user.uid);
       }  else {
-        this.user = {};
+        this.user = null;
       }
     });
   }
 
   saveProfile() {
-    this.as.saveProfile(this.displayName, this.photoURL, this.description, this.key);
+
   }
 
 
@@ -36,19 +35,7 @@ export class UserProfileComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log("yr in it");
-    let that = this;
-    if (this.user) {
-      this.fbUser = this.as.userExist(this.user);
-      this.fbUser.subscribe(user => {
-        user.forEach(user => {
-          this.displayName = user.displayName;
-          this.photoURL = user.photoURL;
-          this.description = user.description;
-          this.key = user.$key
-        });
-      });
-    }
+  
   }
 
 }

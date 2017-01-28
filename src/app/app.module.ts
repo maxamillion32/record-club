@@ -17,6 +17,7 @@ import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { RecordsComponent } from './records/records.component';
 import { AboutComponent } from './about/about.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,7 +44,8 @@ const firebaseAuthConfig =  {
     MemberDetailComponent,
     RecordsComponent,
     AboutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

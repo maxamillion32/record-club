@@ -21,35 +21,24 @@ export class AuthService {
   }
 
   addUser(user: any) {
-    let that = this;
-    var newUser = new User(user.auth.displayName, user.uid, user.auth.photoURL, "");
-    // this.users.subscribe((users) => {
-    //   users.forEach(user => {
-    //     if (user.uid!==newUser.uid) {
-    //       that.users.push(newUser);
-    //     } else {
-    //       return;
-    //     }
-    //   });
-    // });
-  }
-
-  userExist(user: any) {
-    var tuser: any = this.af.database.list('/users', {
-      query: {
-        equalTo: user.uid
+    var inputtedUser = user;
+    var userlist = this.af.database.list('users');
+    userlist.subscribe(users => {
+      for (var i = 0; i < users.length; i++) {
+        if(users[i].uid === inputtedUser.uid) {
+          return;
+        }
       }
+      var newUser = new User(inputtedUser.auth.displayName, inputtedUser.uid, inputtedUser.auth.photoURL, "");
+      this.users.push(newUser);
     });
-    return tuser;
   }
 
   saveProfile(newName: string, newPhoto: string, newDescription: string, key: string) {
-    var userToUpdate = this.getUser(key);
-    userToUpdate.update({
-      displayName: newName,
-      photoURL: newPhoto,
-      description: newDescription
-    });
+    var userToUpdate = this.getUserbyUID(key);
+      userToUpdate.subscribe(user => {
+        console.log(user);
+      });
   }
 
 
@@ -60,6 +49,16 @@ export class AuthService {
 
   getUser(key: string) {
     return this.af.database.object('/users/' + key);
+  }
+
+  getUserbyUID(uid: string) {
+    var user = this.af.database.list("users", {
+      query: {
+        equalTo: "SGF3i7qWjscZwdw0vv08dl9fdBI2"
+      }
+    });
+    console.log(user);
+    return user;
   }
 
 

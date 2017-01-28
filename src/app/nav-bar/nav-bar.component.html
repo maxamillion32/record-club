@@ -7,10 +7,10 @@
       <ul>
         <li><a routerLink="members">Members</a></li>
         <li><a routerLink="records">All Records</a></li>
-        <li><a routerLink="new">Add A Record</a></li>
+        <li *ngIf="user.uid"><a routerLink="new">Add A Record</a></li>
         <input id="searchInput" #searchInput *ngIf="showSearch" placeholder="Search" autofocus>
         <li><a (click)="expandAndShow()">Search</a></li>
-        <li><a routerLink="profile">Profile</a></li>
+        <li *ngIf="user.uid"><a routerLink="profile">My Profile</a></li>
         <li *ngIf="user.uid==undefined" (click)="login()"><a>Log In</a></li>
         <li *ngIf="user.uid" (click)="logout()"><a>Log Out</a></li>
         <li><a routerLink="about">About</a></li>
