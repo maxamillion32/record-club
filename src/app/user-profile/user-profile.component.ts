@@ -19,8 +19,8 @@ export class UserProfileComponent implements OnInit {
       if(user) {
         this.user = user;
         this.as.addUser(this.user);
-        this.fbUser = this.as.getUserbyUID(this.user.uid);
-      }  else {
+        console.log(this.as.getUserbyUID(this.user.uid));
+      } else {
         this.user = null;
       }
     });
@@ -35,7 +35,6 @@ export class UserProfileComponent implements OnInit {
 
 
   ngOnInit() {
-  
   }
 
 }

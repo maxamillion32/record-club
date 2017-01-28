@@ -36,9 +36,9 @@ export class AuthService {
 
   saveProfile(newName: string, newPhoto: string, newDescription: string, key: string) {
     var userToUpdate = this.getUserbyUID(key);
-      userToUpdate.subscribe(user => {
-        console.log(user);
-      });
+      // userToUpdate.subscribe(user => {
+      //   console.log(user);
+      // });
   }
 
 
@@ -50,17 +50,13 @@ export class AuthService {
   getUser(key: string) {
     return this.af.database.object('/users/' + key);
   }
-
-  getUserbyUID(uid: string) {
-    var user = this.af.database.list("users", {
-      query: {
-        equalTo: "SGF3i7qWjscZwdw0vv08dl9fdBI2"
-      }
+  public crazy: User;
+  getUserbyUID(uid: any) {
+    var allem = this.getAllUsers();
+    allem.subscribe(users => {
+      console.log(users);
     });
-    console.log(user);
-    return user;
   }
-
 
 
 }

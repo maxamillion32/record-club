@@ -24,10 +24,6 @@ export class EditProfileComponent implements OnInit {
 
 
   ngOnInit() {
-    this.fbUser.subscribe(user => {
-      this.subby = user;
-      console.log(this.subby);
-    })
   }
 
 
