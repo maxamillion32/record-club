@@ -1,14 +1,15 @@
-<div class="container">
-  <div *ngFor="let record of records | async" class="row record-row">
+
+<div class="col-sm-12 no-padding">
+  <div *ngFor="let record of records" class="row record-row">
     <div class="col-sm-3 no-padding">
       <img src={{record.coverImg}} class="img-responsive no-padding" alt="album cover">
     </div>
     <div class="col-sm-9 record-info">
-      <h1>{{record.artist | uppercase}}</h1>
-      <h2>{{record.title | uppercase}}</h2>
-      <h4>{{record.label | uppercase}}</h4>
-      <h5>{{record.speed | uppercase}} RPM</h5>
-      <p>{{record.description | uppercase}}</p>
+      <h1><span>Artist: </span> {{record.artist | uppercase}}</h1>
+      <h2><span>Title: </span> {{record.title | uppercase}}</h2>
+      <h4><span>Label: </span> {{record.label | uppercase}}</h4>
+      <h5><span>Speed: </span> {{record.speed | uppercase}} RPM</h5>
+      <p><span>Description: </span> {{record.description | uppercase}}</p>
     </div>
   </div>
 </div>

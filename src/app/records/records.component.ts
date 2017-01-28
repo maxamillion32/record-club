@@ -9,11 +9,17 @@ import { RecordService } from '../record.service';
   providers: [RecordService]
 })
 export class RecordsComponent implements OnInit {
-  records: FirebaseListObservable<any[]>;
-  constructor(private rs: RecordService) { }
+  records: any[] = [];
+  constructor(private rs: RecordService) {
+    this.rs.getAllRecords().subscribe(records => {
+      records.forEach(record => {
+          this.records.push(record);
+      });
+    });
+  }
 
   ngOnInit() {
-  this.records = this.rs.getAllRecords();
+
   }
 
 }

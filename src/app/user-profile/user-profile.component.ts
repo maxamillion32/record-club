@@ -16,7 +16,9 @@ export class UserProfileComponent implements OnInit {
   fbUser: any;
   liveprofile: boolean;
   showEdit: boolean = false;
-
+  showRecords: boolean = true;
+  showProfile: boolean = true;
+  userRecords: any = [];
   constructor(private af: AngularFire, private as: AuthService, private rs: RecordService) {
     this.af.auth.subscribe(user => {
       if(user) {
@@ -34,6 +36,13 @@ export class UserProfileComponent implements OnInit {
         }
       });
     });
+    this.rs.getAllRecords().subscribe(records => {
+      records.forEach(record => {
+        if (this.user.uid === record.uid) {
+          this.userRecords.push(record);
+        }
+      })
+    })
   }
 
   updateUser(user: any) {
@@ -42,10 +51,14 @@ export class UserProfileComponent implements OnInit {
 
   showEditComp() {
     this.showEdit = true;
+    this.showRecords = false;
+    this.showProfile = false;
   }
 
   hideEditComp() {
     this.showEdit = false;
+    this.showRecords = true;
+    this.showProfile = true;
   }
 
 

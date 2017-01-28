@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
 })
 
 export class RecordListComponent implements OnInit {
-  @Input() records: FirebaseListObservable<any[]>;
+  @Input() records: any[];
   constructor(private router: Router,
               private as: AuthService) { }
 

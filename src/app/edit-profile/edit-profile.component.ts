@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { User } from '../user.model';
-import { FormsModule, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -12,14 +12,13 @@ import { FormsModule, FormControl } from '@angular/forms';
 export class EditProfileComponent implements OnInit {
   @Input() user: any;
   @Input() fbUser: any;
+  @Output() canceler = new EventEmitter();
   displayName: string;
   photoURL: string;
   description: string;
   key: string;
-  subby: any;
-  nameControl: FormControl = new FormControl();
 
-  constructor(private as: AuthService) {
+  constructor(private as: AuthService, private router: Router) {
     this.as.getAllUsers().subscribe(users => {
       users.forEach(user => {
         if( this.user.uid === user.uid) {
@@ -34,7 +33,12 @@ export class EditProfileComponent implements OnInit {
    }
 
   saveProfile() {
-    this.as.saveProfile(this.displayName, this.photoURL, this.description, this.key)
+    this.as.saveProfile(this.displayName, this.photoURL, this.description, this.key);
+    this.router.navigate(['member', this.key]);
+  }
+
+  closeEdit() {
+    this.canceler.emit();
   }
 
 
