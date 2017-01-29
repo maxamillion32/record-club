@@ -36,5 +36,10 @@ export class RecordService {
     });
   }
 
+  deleteRecord(record) {
+    var recordToDestroy = this.getRecord(record.$key);
+    recordToDestroy.remove();
+  }
+
 
 }

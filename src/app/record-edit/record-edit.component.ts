@@ -19,8 +19,13 @@ export class RecordEditComponent implements OnInit {
 
   saveRecord(record: Record) {
     this.rs.saveRecord(record);
-    this.router.navigate(['profile']);
+    window.location.reload();
     this.closeEdit.emit();
+  }
+
+  deleteRecord(record: Record) {
+    this.rs.deleteRecord(record);
+    window.location.reload();
   }
 
   closeEditDiv() {
