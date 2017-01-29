@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -14,9 +14,12 @@ export class RecordListComponent implements OnInit {
   @Input() records: any[];
   allUsers: any = [];
   editRecord: boolean = false;
+  route: string;
   constructor(
     private router: Router,
-    private as: AuthService) {
+    private as: AuthService,
+    private activatedRoute: ActivatedRoute) {
+      this.route = this.router.url;
       this.as.getAllUsers().subscribe(users => {
         users.forEach(user => {
           this.allUsers.push(user);
@@ -59,6 +62,7 @@ export class RecordListComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.route);
   }
 
 }

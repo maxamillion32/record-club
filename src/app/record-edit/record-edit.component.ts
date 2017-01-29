@@ -23,4 +23,8 @@ export class RecordEditComponent implements OnInit {
     this.closeEdit.emit();
   }
 
+  closeEditDiv() {
+    this.closeEdit.emit();
+  }
+
 }

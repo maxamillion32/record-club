@@ -12,7 +12,7 @@
       <p><span>Description: </span> {{record.description | uppercase}}</p>
       <p>This record is a part of <a (click)="memberDetailLink(getUserKey(record.uid))">{{getUser(record.uid)}}</a>'s Collection</p>
     </div>
-    <div class="col-sm-12 no-padding">
+    <div *ngIf="route==='/profile'" class="col-sm-12 no-padding">
       <h5 (click)="showEditRecord()">EDIT THIS RECORD</h5>
       <record-edit *ngIf="editRecord"
                   [record]="record"
