@@ -35,14 +35,17 @@
 .list {
   padding: 0;
   margin: 0;
+  border-radius: 500px;
 }
 
 .record-spin {
+  max-height: 550px;
+  max-width: 100%;
   position: relative;
   top: 50px;
   left: 100px;
   animation-name: spin;
-  animation-duration: 1.33s;
+  animation-duration: 1.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
