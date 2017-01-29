@@ -35,7 +35,6 @@ export class AuthService {
   }
 
   saveProfile(newName: string, newPhoto: string, newDescription: string, key: string) {
-    console.log(newName, newPhoto, newDescription, key)
     var userToUpdate = this.getUser(key);
     userToUpdate.update({
       displayName: newName,
@@ -43,10 +42,6 @@ export class AuthService {
       description: newDescription,
       liveProfile: true
     });
-    // var userToUpdate = this.getUserbyUID(key);
-      // userToUpdate.subscribe(user => {
-      //   console.log(user);
-      // });
   }
 
   updateUser(user: any) {

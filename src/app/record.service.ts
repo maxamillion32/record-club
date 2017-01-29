@@ -20,5 +20,21 @@ export class RecordService {
     this.records.push(record);
   }
 
+  getRecord(key: string) {
+    return this.af.database.object('records/' + key);
+  }
+
+  saveRecord(record) {
+    var recordToUpdate = this.getRecord(record.$key)
+    recordToUpdate.update({
+      artist: record.artist,
+      title: record.title,
+      label: record.label,
+      speed: record.speed,
+      coverImg: record.coverImg,
+      description: record.description
+    });
+  }
+
 
 }

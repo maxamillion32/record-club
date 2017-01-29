@@ -18,11 +18,11 @@
     <div class="col-sm-8 no-padding">
       <h1>{{fbUser?.displayName}}</h1>
       <p>{{fbUser?.description}}</p>
-      <div *ngIf="userRecords?.length > 0 && showRecords" class="col-sm-12 no-padding my-records-container">
-        <h1 class="mine">MY RECORDS</h1>
-        <record-list [records]="userRecords"></record-list>
-      </div>
     </div>
+  </div>
+  <div *ngIf="userRecords?.length > 0 && showRecords" class="col-sm-12 no-padding my-records-container">
+    <h1 class="mine">MY RECORDS</h1>
+    <record-list [records]="userRecords"></record-list>
   </div>
 </div>
 <div *ngIf="liveprofile===false || showEdit" class="container">
