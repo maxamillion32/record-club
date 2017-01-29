@@ -12,10 +12,35 @@ import { AuthService } from '../auth.service';
 
 export class RecordListComponent implements OnInit {
   @Input() records: any[];
-  constructor(private router: Router,
-              private as: AuthService) { }
+  allUsers: any = []
+  constructor(
+    private router: Router,
+    private as: AuthService) {
+      this.as.getAllUsers().subscribe(users => {
+        users.forEach(user => {
+          this.allUsers.push(user);
+        })
+      });
+    }
 
-
+  getUser(uid: string) {
+    let nameToDisplay: string;
+    this.allUsers.forEach(user => {
+      if(user.uid === uid) {
+        nameToDisplay = user.displayName;
+      }
+    });
+    return nameToDisplay;
+  }
+  getUserKey(uid: string) {
+    let key: string;
+    this.allUsers.forEach(user => {
+      if(user.uid === uid) {
+        key = user.displayName;
+      }
+    });
+    return key;
+  }
 
 
 

@@ -1,4 +1,10 @@
-<div class="container profile-container">
+<div class="container">
+  <div class="row headline">
+    <h1>{{fbUser?.displayName}}</h1>
+  </div>
+</div>
+
+<div class="container profile-container no-padding">
   <div class="row">
     <div class="col-sm-4">
       <img src={{fbUser?.photoURL}} class="img-responsive" alt="">
@@ -12,4 +18,8 @@
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="memberRecords?.length > 0" class="container no-padding">
+  <h1>{{fbUser?.displayName | uppercase}}'s Records:</h1>
+  <record-list [records]="memberRecords"></record-list>
 </div>

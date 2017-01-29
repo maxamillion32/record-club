@@ -41,8 +41,8 @@ export class UserProfileComponent implements OnInit {
         if (this.user.uid === record.uid) {
           this.userRecords.push(record);
         }
-      })
-    })
+      });
+    });
   }
 
   updateUser(user: any) {
