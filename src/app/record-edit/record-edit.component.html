@@ -1,0 +1,36 @@
+
+<div class="col-sm-8 no-padding record-edit">
+  <div class="new-record-form">
+    <div class="form-group">
+      <small>Artist</small>
+      <input [(ngModel)]="record.artist" class="form-control" placeholder="Artist">
+    </div>
+    <div class="form-group">
+      <small>Title</small>
+      <input [(ngModel)]="record.title" class="form-control" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <small>Label</small>
+      <input [(ngModel)]="record.label" class="form-control" placeholder="Label">
+    </div>
+    <div class="form-group">
+      <small>Speed</small>
+      <input [(ngModel)]="record.speed" class="form-control" placeholder="Speed">
+    </div>
+    <div class="form-group">
+      <small>Cover Image URL</small>
+      <input [(ngModel)]="record.coverImg" class="form-control" placeholder="Cover Image (MAKE SURE IT'S SQUARE)">
+    </div>
+    <div class="form-group">
+      <small>Description</small>
+      <input [(ngModel)]="record.description" class="form-control" placeholder="Additional Notes">
+    </div>
+  </div>
+</div>
+<div class="col-sm-4 edit-div">
+  <h4>SAVE RECORD</h4>
+  <br>
+  <h4>DELETE RECORD</h4>
+  <br>
+  <h4>CANCEL</h4>
+</div>

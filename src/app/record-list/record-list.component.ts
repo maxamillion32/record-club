@@ -36,10 +36,15 @@ export class RecordListComponent implements OnInit {
     let key: string;
     this.allUsers.forEach(user => {
       if(user.uid === uid) {
-        key = user.displayName;
+        key = user.$key;
       }
     });
     return key;
+  }
+
+  memberDetailLink(key: string) {
+    this.router.navigate(['member/' + key]);
+    window.scrollTo(0,0);
   }
 
 

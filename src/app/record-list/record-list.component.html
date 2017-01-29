@@ -10,7 +10,8 @@
       <h4><span>Label: </span> {{record.label | uppercase}}</h4>
       <h5><span>Speed: </span> {{record.speed | uppercase}} RPM</h5>
       <p><span>Description: </span> {{record.description | uppercase}}</p>
-      <p><a>{{getUser(record.uid)}}</a></p>
+      <p>This record is a part of <a (click)="memberDetailLink(getUserKey(record.uid))">{{getUser(record.uid)}}</a>'s Collection</p>
     </div>
+    <record-edit [record]="record"></record-edit>
   </div>
 </div>

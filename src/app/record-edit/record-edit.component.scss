@@ -1,0 +1,43 @@
+
+
+
+div.edit-div {
+  padding: 25px;
+  background-color: black;
+  height: 350px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h4  {
+    border: 2px solid white;
+    padding: 15px;
+    transition: 250ms;
+    margin: 0;
+    &:hover {
+      color: black;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.record-edit {
+  padding-right: 50px;
+  small {
+    border-bottom: 2px solid red;
+  }
+  input {
+    font-family: "Raleway";
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid black;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    &:focus {
+      outline: none;
+
+    }
+  }
+}
