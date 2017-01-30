@@ -1,6 +1,6 @@
 
 <div class="col-sm-12 no-padding">
-  <div class="">
+  <div *ngIf="route==='/records'" class="">
     <input [(ngModel)]="filter" placeholder="Filter Records by Artist">
   </div>
   <div *ngFor="let record of records | record:filter" class="row record-row">

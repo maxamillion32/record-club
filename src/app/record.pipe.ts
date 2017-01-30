@@ -9,18 +9,14 @@ export class RecordPipe implements PipeTransform {
 
   transform(records: Record[], filter: string): any {
     var output = [];
-    if (filter = '') {
-      records.forEach(record => {
-        output.push(record);
-      });
-      return output;
-    }
     records.forEach(record => {
-      if (record.artist.includes(filter)) {
+      if (filter === undefined) {
+        output.push(record);
+      }
+      else if (record.artist.includes(filter)) {
         output.push(record);
       }
     });
     return output;
   }
-
 }
