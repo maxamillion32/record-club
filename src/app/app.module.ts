@@ -21,6 +21,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { RecordEditComponent } from './record-edit/record-edit.component';
 import { AdminComponent } from './admin/admin.component';
+import { RecordPipe } from './record.pipe';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -50,7 +51,8 @@ const firebaseAuthConfig =  {
     UserProfileComponent,
     EditProfileComponent,
     RecordEditComponent,
-    AdminComponent
+    AdminComponent,
+    RecordPipe
   ],
   imports: [
     BrowserModule,

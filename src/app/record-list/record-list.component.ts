@@ -15,6 +15,7 @@ export class RecordListComponent implements OnInit {
   allUsers: any = [];
   editRecord: boolean = false;
   route: string;
+  filter: string;
   constructor(
     private router: Router,
     private as: AuthService) {

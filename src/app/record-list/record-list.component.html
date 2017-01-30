@@ -1,6 +1,9 @@
 
 <div class="col-sm-12 no-padding">
-  <div *ngFor="let record of records" class="row record-row">
+  <div class="">
+    <input [(ngModel)]="filter" placeholder="Filter Records by Artist">
+  </div>
+  <div *ngFor="let record of records | record:filter" class="row record-row">
     <div class="col-sm-3 no-padding">
       <img src={{record.coverImg}} class="img-responsive no-padding" alt="album cover">
     </div>
