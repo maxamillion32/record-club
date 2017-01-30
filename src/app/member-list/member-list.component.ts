@@ -9,6 +9,7 @@ import { FirebaseListObservable } from 'angularfire2';
 export class MemberListComponent implements OnInit {
   @Input() users: FirebaseListObservable<any[]>;
   @Output() memberSender = new EventEmitter();
+  @Output() deleteSender = new EventEmitter();
   constructor() { }
 
   goToMemberDetail(userId: string) {
@@ -16,6 +17,12 @@ export class MemberListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  deleteUser(user) {
+    if(confirm("Do you Really Want to Delete this User?")) {
+      this.deleteSender.emit(user);
+    }
   }
 
 }

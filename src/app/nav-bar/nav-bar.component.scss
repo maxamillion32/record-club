@@ -18,6 +18,14 @@
         font-weight: bold;
       }
     }
+    .x-icon {
+      height: 15px;
+      position: relative;
+      right: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -40,17 +48,12 @@
 }
 
 input {
-  padding-right: 15px;
-  background-image: url('../../assets/images/search.png');
-  background-size: 15px;
-  background-repeat: no-repeat;
-  background-position: right;
+  height: 25px;
   margin-left: 15px;
   border: 0;
   border-bottom: 2px solid black;
   outline: none;
   display: inline-block;
-  transition: 5s;
   &::-webkit-input-placeholder {
     color: black;
   }

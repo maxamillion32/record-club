@@ -41,5 +41,17 @@ export class RecordService {
     recordToDestroy.remove();
   }
 
+  deleteMultipleRecords(uid) {
+    let records = this.getAllRecords()
+    records.forEach( records => {
+      records.forEach(record => {
+        if (record.uid === uid) {
+          var recordToDestroy = this.getRecord(record.$key);
+          recordToDestroy.remove();
+        }
+      })
+    });
+  }
+
 
 }

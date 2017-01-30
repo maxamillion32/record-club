@@ -8,6 +8,7 @@ import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { RecordsComponent } from './records/records.component';
 import { AboutComponent } from './about/about.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const appRoutes: Routes = [{
@@ -31,6 +32,9 @@ const appRoutes: Routes = [{
 }, {
   path: 'profile',
   component: UserProfileComponent
+}, {
+  path: 'admin',
+  component: AdminComponent
 }
 
 ];

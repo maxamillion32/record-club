@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 
 export class NavBarComponent implements OnInit {
   user: any = {};
+  fbUser: any;
   showSearch: boolean = false;
 
   constructor(private af: AngularFire, private as: AuthService, private rs: RecordService, private router: Router) {
@@ -22,6 +23,13 @@ export class NavBarComponent implements OnInit {
       }  else {
         this.user = {};
       }
+    });
+    this.as.getAllUsers().subscribe(users => {
+      users.forEach(user => {
+        if( this.user.uid === user.uid) {
+          this.fbUser = user;
+        }
+      });
     });
   }
 
@@ -44,6 +52,7 @@ export class NavBarComponent implements OnInit {
     let that = this;
     this.as.logout().then(function() {
       that.router.navigate(['']);
+      window.location.reload();
     })
   }
 

@@ -23,6 +23,7 @@ export class UserProfileComponent implements OnInit {
     this.af.auth.subscribe(user => {
       if(user) {
         this.user = user;
+        console.log(user);
         this.as.addUser(this.user);
       } else {
         this.user = null;

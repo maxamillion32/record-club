@@ -44,15 +44,11 @@ export class AuthService {
     });
   }
 
-  updateUser(user: any) {
-      console.log(user);
-      // usertwoupdate.update({
-      //   // displayName: usertwoupdate.displayName,
-      //   // uid: usertwoupdate.uid,
-      //   // photoURL: usertwoupdate.photoURL,
-      //   // description: usertwoupdate.description,
-      //   // profileLive: true
-      // });
+  deleteUser(user) {
+    console.log(user.$key);
+    var userToDelete = this.getUser(user.$key);
+
+    userToDelete.remove();
   }
 
 
@@ -63,15 +59,7 @@ export class AuthService {
   getUser(key: string) {
     return this.af.database.object('/users/' + key);
   }
-  public crazy: FirebaseListObservable<any[]>;
-  getUserbyUID(uid: string): any {
-    var theone: FirebaseListObservable<any[]>;
-    var allem = this.getAllUsers();
-    allem.subscribe(users => {
-      this.crazy = users;
-      return this.crazy;
-    });
-  }
+
 
 
 }

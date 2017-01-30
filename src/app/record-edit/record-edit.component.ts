@@ -20,7 +20,6 @@ export class RecordEditComponent implements OnInit {
   saveRecord(record: Record) {
     this.rs.saveRecord(record);
     window.location.reload();
-    this.closeEdit.emit();
   }
 
   deleteRecord(record: Record) {

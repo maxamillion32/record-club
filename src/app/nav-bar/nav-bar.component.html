@@ -9,7 +9,8 @@
         <li><a routerLink="records">All Records</a></li>
         <li *ngIf="user.uid"><a routerLink="new">Add A Record</a></li>
         <input id="searchInput" #searchInput *ngIf="showSearch" placeholder="Search" autofocus>
-        <li><a (click)="expandAndShow()">Search</a></li>
+        <li *ngIf="!showSearch"><a (click)="expandAndShow()">Search</a></li>
+        <li *ngIf="showSearch" (click)="hideExpand()"><img class="x-icon" src="../../assets/images/x.png" alt=""></li>
         <li *ngIf="user.uid"><a routerLink="profile">My Profile</a></li>
         <li *ngIf="user.uid==undefined" (click)="login()"><a>Log In</a></li>
         <li *ngIf="user.uid" (click)="logout()"><a>Log Out</a></li>

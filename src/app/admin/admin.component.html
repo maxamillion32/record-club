@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row headline">
+    <h1>ADMIN PORTAL. WITH GREAT POWER COMES GREAT RESPONSIBILITY</h1>
+  </div>
+</div>
+<div class="container">
+  <member-list
+  [users]="users"
+  (deleteSender)="deleteUser($event)"></member-list>
+</div>
