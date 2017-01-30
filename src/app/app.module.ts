@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { masterFirebaseConfig } from './api-keys';
 import { Routing } from './app.routing';
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -58,7 +59,7 @@ const firebaseAuthConfig =  {
     Routing,
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
