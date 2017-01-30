@@ -7,6 +7,6 @@
     <h1 (click)="goToMemberDetail(user.$key)">{{user.displayName}}</h1>
     <h4 *ngIf="user.description!==''">{{user.description}}</h4>
     <br>
-    <button (click)="deleteUser(user)">DELETE USER</button>
+    <button *ngIf="route==='/admin'"(click)="deleteUser(user)">DELETE USER</button>
   </div>
 </div>

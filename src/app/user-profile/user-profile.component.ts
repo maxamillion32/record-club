@@ -45,11 +45,7 @@ export class UserProfileComponent implements OnInit {
       });
     });
   }
-
-  updateUser(user: any) {
-    this.as.updateUser(user);
-  }
-
+  
   showEditComp() {
     this.showEdit = true;
     this.showRecords = false;

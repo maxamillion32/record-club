@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Record } from '../record.model';
 import { RecordService } from '../record.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'record-edit',
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
 export class RecordEditComponent implements OnInit {
   @Input() record: Record;
   @Output() closeEdit = new EventEmitter();
-  constructor(private rs: RecordService, private router: Router) { }
+  constructor(private rs: RecordService) { }
 
   ngOnInit() {
   }

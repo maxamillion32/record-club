@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -17,8 +17,7 @@ export class RecordListComponent implements OnInit {
   route: string;
   constructor(
     private router: Router,
-    private as: AuthService,
-    private activatedRoute: ActivatedRoute) {
+    private as: AuthService) {
       this.route = this.router.url;
       this.as.getAllUsers().subscribe(users => {
         users.forEach(user => {

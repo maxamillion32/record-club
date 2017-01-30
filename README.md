@@ -1,31 +1,31 @@
 # RecordClub
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
+This site is a club for record nerds to share their latest records. It was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5. It uses Firebase for the database, and is deployed and hosted through Firebase as well. you can view the site at: [Record Club](https://record-club-a72ef.firebaseapp.com).
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation / development server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+* `git clone https://github.com/tylerferrin/record-club` this repository
+* `cd record-club`
+* `npm install`
+* `bower install`
+* `npm start`
 
-## Build
+## Live Site
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* Visit the live app at [Record Club](https://record-club-a72ef.firebaseapp.com).
 
-## Running unit tests
+## Known Bugs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+_Page refreshes on the live site don't work currently, but you can navigate around the site. via the links just fine_
 
-## Running end-to-end tests
+## Support and contact details
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+_If you run into any issues please contact @ tyferrin@gmail.com_
 
-## Deploying to GitHub Pages
+## Technologies Used
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+_This app was created with Angular2 and the angular-cli (which utilizes Node.js, NPM, Bower, and Javascript), and tiny bit of bootstrap (for the grid only!). The site was deployed with Firebase and the database is also hosted by Firebase.
 
-## Further help
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2017 _Record Club, TYLER FERRIN_
